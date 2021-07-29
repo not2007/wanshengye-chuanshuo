@@ -28,7 +28,15 @@
 				width:373.5px;
 				height:91.5px;
 			}
-			
+			.logo1{
+				position: absolute;
+				/*margin-top: 20px;
+				margin-left: 20px;*/
+				left: 5%;
+				top: 35px;
+				width:391px;
+				height:61px;
+			}
 			.contentBox {
 				width: 100%;
 				/*background-color: gold;*/
@@ -44,13 +52,19 @@
 				transform: translateX(-50%);
 				top:50px;
 			}
-			
+			.phone1 {
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+				top:50px;
+				width:70%;
+			}
 			.footer{height:80px}
 			.blue{background-color:#07aeef}
 			
-			#all {
+			.all {
 				    overflow: hidden;
-				    background-image: url(img_bg.jpg);
+				    background-image: url(https://wawa-1254281995.file.myqcloud.com/app/1566667777/img_bg.jpg);
 				    background-size: cover;
 				    background-color: #060d15;
 				    background-attachment: fixed;
@@ -58,8 +72,11 @@
 				    background-position: center;
 				    width: 100vw;
 				    min-height: 100vh;
+					display:none;
 			}
-			
+			.text1{
+				width:90%;
+			}
 			.text_content {
 				width: 80%;
 				position: relative;
@@ -126,6 +143,13 @@
 					    top: -100px;
 						width:43%;
 				}
+				.phone1 {
+					left: 0;
+					float: left;
+					    transform: translateX(140%);
+					    top: -100px;
+						width:43%;
+				}
 				.text{
 					width:80%;
 				}
@@ -144,7 +168,7 @@
 	</head>
 
 	<body>
-		<div id="all">
+		<div class="all" id="CHA">
 			<img src="https://wawa-1254281995.file.myqcloud.com/app/1566667777/img_logo.png" class="logo">
 
 			<div class="contentBox">
@@ -163,9 +187,54 @@
 			</div>
 			
 		</div>
+		<div class="all" id="ENG">
+			<img src="https://wawa-1254281995.file.myqcloud.com/app/1566667777/img_logo_EN.png" class="logo1">
+		
+			<div class="contentBox">
+				<img src="https://wawa-1254281995.file.myqcloud.com/app/1566667777/img_yangji_EN.png" class="phone1">
+				<div class="text_content">
+					<img src="https://wawa-1254281995.file.myqcloud.com/app/1566667777/text_title_EN.png" style="" class="text1">
+					<p style="margin-top: 50px;">On Halloween night, a large wave of monsters and demons are rushing towards you</p>
+					<p style="margin-top: 8px;">Use the right weapon to destroy the monsters</p>
+					<p style="margin-top: 8px;">Compete for hand speed to win high scores</p>
+					<p style="margin-top: 8px;">fight on Halloween to write a new legend~</p>
+					<p style="margin-top: 50px;font-size:32px;">Contact us：<span style="color:#FD8D14">audit3d@iCloud.com</span></p>
+					<img src="https://wawa-1254281995.file.myqcloud.com/app/1566667777/bt_xiazai_EN.png" class="download" id="download_EN" style="width:330px;height:74px;">
+				</div>
+				<div style="clear: both;"></div>
+				
+			</div>
+			
+		</div>
 	<script>
+		window.onload=function(){
+		    if(getQueryString('language')==='ENG'){
+		   var body=document.getElementById('ENG');
+		   body.style.display='block';
+		   document.title='Legend of Halloween Battle';
+		   document.getElementById('download_EN').addEventListener('click', function() {
+		   	console.log('ja');
+		   				window.location.href = 'https://apps.apple.com/cn/app/id1578430245';
+		   			})
+		    }else{
+				var body=document.getElementById('CHA');
+				body.style.display='block';
+			}
+		}
+		function getQueryString(name) {
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		    var r = window.location.search.substr(1).match(reg);
+		    var context = "";
+		    if(r != null) {
+		        context = r[2]
+		    }
+		    reg = null;
+		    r = null;
+		    return context == null || context == "" || context == "undefined" ? "" : context
+		}
 		document.getElementById('download').addEventListener('click', function() {
-						window.location.href = 'https://apps.apple.com/cn/app/id1575872174';
+			console.log('ja');
+						window.location.href = 'https://apps.apple.com/cn/app/id1578430245';
 					})
 	</script>
 </body></html>
